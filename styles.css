@@ -1,0 +1,74 @@
+.wrapper {
+  border: 1px solid black;
+  display:table;
+  width:100%;/*% value ensures that our grid will shrink and grow based on the device it's being viewed on*/    /**/ 
+  }
+
+*{
+  box-sizing: border-box; /* ensures all elements remain the required size as 'padding gutters' may increase size ##no overflow*/ 
+}
+
+[class*='col-']{ /* class selector uses prefix to columns to give css properties to all ~~'col-'~~ */ 
+  float:left;
+  border:1px solid red;
+  padding-right:10px; /*Gutters to create spacing between grid columns*/ 
+}
+
+[class*='col-']:last-of-type {
+  padding-right:0; /*generically target the last column in each row, like this to stop padding in the last column of each row*/
+}
+
+.row:before,
+.row:after {
+  content:"";  
+  clear:both; /**/ 
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-3 {
+  width: 50%;
+}
+
+.col-4 {
+  width:33.33%;
+}
+
+.col-5 {
+  width: 33.33%;
+}
+
+.col-6 {
+  width: 33.33%;
+}
+
+.col-7 {
+  width: 25%;
+}
+
+.col-8 {
+  width: 25%;
+}
+
+.col-9 {
+  width: 25%;
+}
+
+.col-10 {
+  width: 25%;
+}
+
+.col-11 {
+  width: 50%;
+}
+
+.col-12 {
+  width: 50%;
+}
+
