@@ -1,21 +1,32 @@
 .wrapper {
-  border: 1px solid black;
+  border: 3px solid black;
   display:table;
   width:100%;/*% value ensures that our grid will shrink and grow based on the device it's being viewed on*/    /**/ 
   }
+
+h1{
+  text-align:center;
+  font-family:"helvetica";
+}
 
 *{
   box-sizing: border-box; /* ensures all elements remain the required size as 'padding gutters' may increase size ##no overflow*/ 
 }
 
+[class*='offset-']{
+  float:left;
+  background-color:blue;
+}
+
 [class*='col-']{ /* class selector uses prefix to columns to give css properties to all ~~'col-'~~ */ 
   float:left;
   border:1px solid red;
+  width: 8.33%;
   padding-right:10px; /*Gutters to create spacing between grid columns*/ 
 }
 
 [class*='col-']:last-of-type {
-  padding-right:0; /*generically target the last column in each row, like this to stop padding in the last column of each row*/
+  padding-right:10px; /*generically target the last column in each row, like this to stop padding in the last column of each row*/
 }
 
 .row:before,
@@ -24,51 +35,106 @@
   clear:both; /**/ 
 }
 
-.col-1 {
-  width: 100%;
+@media (max-width :600px){
+  .col-4{display:none;}  
 }
 
-.col-2 {
-  width: 50%;
+.col-1{            /*To work out column width divide wrapper width (100%) by the number of coulmns you intend to use
+                     In this particular case I chose 12, a common industry standard. 100% / 12 = 8.33...%*/
+  width: 8.33%; 
 }
 
-.col-3 {
-  width: 50%;
+.offset-1{      /*Offsets are the same as columns just empty cells to create space where needed*/
+  width: 8.33%; /* Each row must equal 100% through the columns and offsets used.*/
 }
 
-.col-4 {
+.col-2{
+  width: 16.66%;
+}
+
+.offset-2{
+  width: 16.66%;
+}
+
+.col-3{
+  width: 25%;
+}
+
+.offset-3{
+  width: 25%;
+}
+
+.col-4{
   width:33.33%;
 }
 
-.col-5 {
-  width: 33.33%;
+.offset-4{
+  width:33.33%;
 }
+
+.col-5{
+  width: 41.66%;
+}
+
+.offset-5{
+  width: 41.66%;
+}
+
 
 .col-6 {
-  width: 33.33%;
+  width: 50%;
 }
 
+.offset-6 {
+  width: 50%;
+}
+
+
 .col-7 {
-  width: 25%;
+  width: 58.33%;
+}
+
+.offset-7 {
+  width: 58.33%;
 }
 
 .col-8 {
-  width: 25%;
+  width: 66.66%;
+}
+
+.offset-8 {
+  width: 66.66%;
 }
 
 .col-9 {
-  width: 25%;
+  width: 75%;
+}
+
+.offset-9 {
+  width: 75%;
 }
 
 .col-10 {
-  width: 25%;
+  width: 83.33%;
+}
+
+.offset-10 {
+  width: 83.33%;
 }
 
 .col-11 {
-  width: 50%;
+  width: 91.66%;
+}
+
+
+.offset-11 {
+  width: 91.66%;
 }
 
 .col-12 {
-  width: 50%;
+  width: 100%;
 }
 
+.offset-12 {
+  width: 100%;
+}
